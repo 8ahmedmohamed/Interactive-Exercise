@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <title>Educational RC</title>
+    </head>
+    
+    <body style="user-select: none;">
+        <!-- Preloader GIF -->
+        <div id="loading">
+            <img id="loading-image" src="./assets/Ripple-1s-200px.gif" alt="Loading..." />
+        </div>
+        
+        <!-- Page Content -->
+        <div id="content" style="display: none;">
+
+            <!-- Top Section -->
+            <div class="d-flex justify-content-center mt-4" >
+                <div class="d-flex" style="width: 800px;">
+                    <img class="mic" src="./assets/audio_icon.png" data-state="play" style="cursor: pointer; width: 45px; height: 35px;"/>
+                    <audio class="mic1" src="./assets/p21e4.mp3" preload></audio>
+                    <div class="px-4">
+                        <div style="user-select: none; cursor:context-menu; font-size: 23px; font-weight: 400;">Listen and number. Then ask and answer.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Section -->
+            <div class="d-flex justify-content-center mt-4" >
+                <div class="d-flex justify-content-center" style="width: 830px; height: 460px; background-color: #0fa0c5;">
+                    <div id="unselect" class="d-flex justify-content-center align-items-center" style="width: 790px; background-color: white; border-radius: 15px; border: 3px solid #f5821f;">
+                        <a id="showresult1"  class="d-flex justify-content-center mr-2" style="cursor: pointer; text-decoration: none;" id="1">
+                            <img  onclick="playsong2()" src="./assets/p21e4q1_1.png" alt="q1" style="width: 150px; height: 300px; margin-bottom: 20px;">
+                            <div id="bigmenu1" style=" margin-left: -40px; margin-top: 270px;">
+                                <div id="menu1" style="background-color: white; display: none;">
+                                    <div onclick="A1wrong1()" id="A1wrong1" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">1</div>
+                                    <div onclick="A1right2()" id="A1right2" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">2</div>
+                                    <div onclick="A1wrong3()" id="A1wrong3" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">3</div>
+                                    <div onclick="A1wrong4()" id="A1wrong4" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">4</div>
+                                    <div onclick="A1wrong5()" id="A1wrong5" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">5</div>
+                                </div>
+                                <div onclick="openmenu1()" class="d-flex justify-content-center align-items-center" id="box1" class="shadow" style="width: 40px; height: 40px; border: 1px solid black; font-size: 30px;"></div>
+                            </div>
+                        </a>
+                        <a id="showresult2"  class="d-flex justify-content-center mr-2" style="cursor: pointer; text-decoration: none;" id="2">
+                            <img onclick="playsong3()" src="./assets/p21e4q1_2.png"  alt="q2" style="width: 170px; height: 265px; margin-top: 50px;">
+                            <div id="bigmenu2" style=" margin-left: -80px; margin-top: 270px;">
+                                <div id="menu2" style="background-color: white; display: none;">
+                                    <div onclick="A2wrong1()" id="A2wrong1" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">1</div>
+                                    <div onclick="A2wrong2()" id="A2wrong2" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">2</div>
+                                    <div onclick="A2right3()" id="A2right3" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">3</div>
+                                    <div onclick="A2wrong4()" id="A2wrong4" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">4</div>
+                                    <div onclick="A2wrong5()" id="A2wrong5" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">5</div>
+                                </div>
+                                <div onclick="openmenu2()" class="d-flex justify-content-center align-items-center" id="box2" class="shadow" style="width: 40px; height: 40px; border: 1px solid black; font-size: 30px;"></div>
+                            </div>
+                        </a>
+                        <a id="showresult3"  class="d-flex justify-content-center mx-2" style="cursor: pointer; text-decoration: none;" id="3">
+                            <img onclick="playsong5()" src="./assets/p21e4q1_3.png"  alt="q3" style="width: 170px; height: 260px; margin-top: 60px;">
+                            <div id="bigmenu3" style=" margin-left: -80px; margin-top: 270px;">
+                                <div id="menu3" style="background-color: white; display: none;">
+                                    <div onclick="A3wrong1()" id="A3wrong1" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">1</div>
+                                    <div onclick="A3wrong2()" id="A3wrong2" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">2</div>
+                                    <div onclick="A3wrong3()" id="A3wrong3" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">3</div>
+                                    <div onclick="A3wrong4()" id="A3wrong4" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">4</div>
+                                    <div onclick="A3right5()" id="A3right5" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">5</div>
+                                </div>
+                                <div onclick="openmenu3()" class="d-flex justify-content-center align-items-center" id="box3" class="shadow" style="width: 40px; height: 40px; border: 1px solid black; font-size: 30px;"></div>
+                            </div>
+                        </a>
+                        <a id="showresult4"  class="d-flex justify-content-center mx-2" style="cursor: pointer; text-decoration: none;" id="4">
+                            <img onclick="playsong4()" src="./assets/p21e4q1_4.png"  alt="q4" style="width: 170px; height: 220px; margin-top: 85px;">
+                            <div id="bigmenu4" style=" margin-left: -90px; margin-top: 265px;">
+                                <div id="menu4" style="background-color: white; display: none;">
+                                    <div onclick="A4wrong1()" id="A4wrong1" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">1</div>
+                                    <div onclick="A4wrong2()" id="A4wrong2" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">2</div>
+                                    <div onclick="A4wrong3()" id="A4wrong3" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">3</div>
+                                    <div onclick="A4right4()" id="A4right4" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">4</div>
+                                    <div onclick="A4wrong5()" id="A4wrong5" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">5</div>
+                                </div>
+                                <div onclick="openmenu4()" class="d-flex justify-content-center align-items-center" id="box4" class="shadow" style="width: 40px; height: 40px; border: 1px solid black; font-size: 30px;"></div>
+                            </div>
+                        </a>
+                        <a id="showresult5"  class="d-flex justify-content-center mr-2" style="cursor: pointer; text-decoration: none;" id="5">
+                            <img onclick="playsong1()" src="./assets/p21e4q1_5.png"  alt="q5" style="width: 170px; height: 260px; margin-top: 70px;">
+                            <div id="bigmenu5" style=" margin-left: -60px; margin-top: 270px;">
+                                <div id="menu5" style="background-color: white; display: none;">
+                                    <div onclick="A5right1()" id="A5right1" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">1</div>
+                                    <div onclick="A5wrong2()" id="A5wrong2" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">2</div>
+                                    <div onclick="A5wrong3()" id="A5wrong3" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">3</div>
+                                    <div onclick="A5wrong4()" id="A5wrong4" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">4</div>
+                                    <div onclick="A5wrong5()" id="A5wrong5" class="d-flex justify-content-center align-items-center" style="width: 40px; height: 40px; color: black; font-size: 20px; border: 1px solid black;">5</div>
+                                </div>
+                                <div onclick="openmenu5()" class="d-flex justify-content-center align-items-center" id="box5" class="shadow" style="width: 40px; height: 40px; border: 1px solid black; font-size: 30px;"></div>
+                            </div>
+                        </a>
+                    </div>
+    
+                </div>
+            </div>
+
+            <!-- Last Section -->
+            <div class="d-flex justify-content-center" >
+                <div class="d-flex align-items-center" style="width: 830px; height: 80px; background-color: #deecf6;">
+                    <img onclick="reset()" src="./assets/replay_icon.png" alt="reply" class="mx-4" style="cursor: pointer; width: 53px; height: 50px;">
+                    
+                    <div class="d-flex align-items-center mr-5" style="background-color: #f88d2f; border: 2px solid #ff7e0e; border-radius: 25px; width: 250px; height: 50px;">
+                        <img onclick="playaudio()" id="1" src="./assets/play.png" class="sound mx-3" data-state="start" style="display: block; cursor: pointer; width: 12px; height: 14px;"/>
+                        <img onclick="playaudio()" id="2" src="./assets/pause.png" class="sound mx-3" data-state="start" style="display: none; cursor: pointer; width: 12px; height: 14px;"/>
+                        <audio id="myaudio">
+                            <source src="./assets/p21e4q1.mp3" type="audio/mpeg">
+                            your browser does not support the audio element.
+                        </audio>
+                        <div class="mt-1">
+                            <input style="width: 180px;" type="range" id="seek" min="0" max="100" value="0" step="0.5">
+                        </div>
+                    </div>
+
+                    <a class="ml-5" onclick="showresult()" >
+                        <img id="showres" src="./assets/showAns_icon.png" alt="reply" class="mx-4" style="cursor: pointer; width: 65px; height: 50px;">
+                    </a>
+    
+                </div>
+            </div>
+
+        </div>
+
+        <script language="javascript" type="text/javascript">
+            // Preloader
+            setTimeout(function gif(){
+                document.getElementById("loading").style.display = "none";
+            },600)
+
+            setTimeout(function content(){
+                document.getElementById("content").style.display = "block";
+            },550)
+            ////////////////////////////////////////////////////////////////////////////////
+
+
+            // Instruction Audio
+            document.querySelector("img.mic").addEventListener("click", function(e){
+                var state = e.currentTarget.dataset.state;
+                if (state == "play") {
+                    //play the gif aswell
+                    document.querySelector("audio.mic1").play();
+                    e.currentTarget.dataset.state = "pause";
+                }
+                else {
+                    //pause the gif aswell
+                    document.querySelector("audio.mic1").pause();
+                    e.currentTarget.dataset.state = "play";
+                }	
+            });
+            ////////////////////////////////////////////////////////////////////////////////
+
+            // Questions
+            var rightsong = new Audio();
+            rightsong.src = './assets/correct.mp3';
+
+            var wrongsong = new Audio();
+            wrongsong.src = './assets/incorrect.mp3';
+
+            var answer1=0;
+            var answer2=0;
+            var answer3=0;
+            var answer4=0;
+            var answer5=0;
+            // Question 1
+            function A1wrong1() {
+                var answer = document.getElementById("A1wrong1").innerHTML;
+                wrongsong.play();
+                document.getElementById("box1").style.border = "1px solid red";
+                document.getElementById("box1").innerHTML = answer ;
+                document.getElementById("menu1").style.display = "none";
+                document.getElementById("bigmenu1").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box1").style.border = "1px solid black";
+                document.getElementById("box1").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A1right2() {
+                answer1 = document.getElementById("A1right2").innerHTML;
+                rightsong.play();
+                document.getElementById("box1").style.border = "1px solid rgb(63, 190, 95)";
+                document.getElementById("box1").innerHTML = answer1 ;
+                document.getElementById("menu1").style.display = "none";
+                document.getElementById("bigmenu1").style.marginTop = "270px";
+                document.getElementById("showresult1").style.opacity = "0.7";
+                document.getElementById("showresult1").style.pointerEvents = "none";
+            }
+            function A1wrong3() {
+                var answer = document.getElementById("A1wrong3").innerHTML;
+                wrongsong.play();
+                document.getElementById("box1").style.border = "1px solid red";
+                document.getElementById("box1").innerHTML = answer ;
+                document.getElementById("menu1").style.display = "none";
+                document.getElementById("bigmenu1").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box1").style.border = "1px solid black";
+                document.getElementById("box1").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A1wrong4() {
+                var answer = document.getElementById("A1wrong4").innerHTML;
+                wrongsong.play();
+                document.getElementById("box1").style.border = "1px solid red";
+                document.getElementById("box1").innerHTML = answer ;
+                document.getElementById("menu1").style.display = "none";
+                document.getElementById("bigmenu1").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box1").style.border = "1px solid black";
+                document.getElementById("box1").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A1wrong5() {
+                var answer = document.getElementById("A1wrong5").innerHTML;
+                wrongsong.play();
+                document.getElementById("box1").style.border = "1px solid red";
+                document.getElementById("box1").innerHTML = answer ;
+                document.getElementById("menu1").style.display = "none";
+                document.getElementById("bigmenu1").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box1").style.border = "1px solid black";
+                document.getElementById("box1").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+
+            // Question 2
+            function A2wrong1() {
+                var answer = document.getElementById("A2wrong1").innerHTML;
+                wrongsong.play();
+                document.getElementById("box2").style.border = "1px solid red";
+                document.getElementById("box2").innerHTML = answer ;
+                document.getElementById("menu2").style.display = "none";
+                document.getElementById("bigmenu2").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box2").style.border = "1px solid black";
+                document.getElementById("box2").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A2wrong2() {
+                var answer = document.getElementById("A2wrong2").innerHTML;
+                wrongsong.play();
+                document.getElementById("box2").style.border = "1px solid red";
+                document.getElementById("box2").innerHTML = answer ;
+                document.getElementById("menu2").style.display = "none";
+                document.getElementById("bigmenu2").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box2").style.border = "1px solid black";
+                document.getElementById("box2").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A2right3() {
+                answer2 = document.getElementById("A2right3").innerHTML;
+                rightsong.play();
+                document.getElementById("box2").style.border = "1px solid rgb(63, 190, 95)";
+                document.getElementById("box2").innerHTML = answer2 ;
+                document.getElementById("menu2").style.display = "none";
+                document.getElementById("bigmenu2").style.marginTop = "270px";
+                document.getElementById("showresult2").style.opacity = "0.7";
+                document.getElementById("showresult2").style.pointerEvents = "none";
+            }
+            function A2wrong4() {
+                var answer = document.getElementById("A2wrong4").innerHTML;
+                wrongsong.play();
+                document.getElementById("box2").style.border = "1px solid red";
+                document.getElementById("box2").innerHTML = answer ;
+                document.getElementById("menu2").style.display = "none";
+                document.getElementById("bigmenu2").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box2").style.border = "1px solid black";
+                document.getElementById("box2").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A2wrong5() {
+                var answer = document.getElementById("A2wrong5").innerHTML;
+                wrongsong.play();
+                document.getElementById("box2").style.border = "1px solid red";
+                document.getElementById("box2").innerHTML = answer ;
+                document.getElementById("menu2").style.display = "none";
+                document.getElementById("bigmenu2").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box2").style.border = "1px solid black";
+                document.getElementById("box2").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+
+            // Question 3
+            function A3wrong1() {
+                var answer = document.getElementById("A3wrong1").innerHTML;
+                wrongsong.play();
+                document.getElementById("box3").style.border = "1px solid red";
+                document.getElementById("box3").innerHTML = answer ;
+                document.getElementById("menu3").style.display = "none";
+                document.getElementById("bigmenu3").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box3").style.border = "1px solid black";
+                document.getElementById("box3").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A3wrong2() {
+                var answer = document.getElementById("A3wrong2").innerHTML;
+                wrongsong.play();
+                document.getElementById("box3").style.border = "1px solid red";
+                document.getElementById("box3").innerHTML = answer ;
+                document.getElementById("menu3").style.display = "none";
+                document.getElementById("bigmenu3").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box3").style.border = "1px solid black";
+                document.getElementById("box3").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A3wrong3() {
+                var answer = document.getElementById("A3wrong3").innerHTML;
+                wrongsong.play();
+                document.getElementById("box3").style.border = "1px solid red";
+                document.getElementById("box3").innerHTML = answer ;
+                document.getElementById("menu3").style.display = "none";
+                document.getElementById("bigmenu3").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box3").style.border = "1px solid black";
+                document.getElementById("box3").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A3wrong4() {
+                var answer = document.getElementById("A3wrong4").innerHTML;
+                wrongsong.play();
+                document.getElementById("box3").style.border = "1px solid red";
+                document.getElementById("box3").innerHTML = answer ;
+                document.getElementById("menu3").style.display = "none";
+                document.getElementById("bigmenu3").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box3").style.border = "1px solid black";
+                document.getElementById("box3").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A3right5() {
+                answer3 = document.getElementById("A3right5").innerHTML;
+                rightsong.play();
+                document.getElementById("box3").style.border = "1px solid rgb(63, 190, 95)";
+                document.getElementById("box3").innerHTML = answer3 ;
+                document.getElementById("menu3").style.display = "none";
+                document.getElementById("bigmenu3").style.marginTop = "270px";
+                document.getElementById("showresult3").style.opacity = "0.7";
+                document.getElementById("showresult3").style.pointerEvents = "none";
+
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+
+            // Question 4
+            function A4wrong1() {
+                var answer = document.getElementById("A4wrong1").innerHTML;
+                wrongsong.play();
+                document.getElementById("box4").style.border = "1px solid red";
+                document.getElementById("box4").innerHTML = answer ;
+                document.getElementById("menu4").style.display = "none";
+                document.getElementById("bigmenu4").style.marginTop = "265px";
+
+                setTimeout(function res(){
+                document.getElementById("box4").style.border = "1px solid black";
+                document.getElementById("box4").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A4wrong2() {
+                var answer = document.getElementById("A4wrong2").innerHTML;
+                wrongsong.play();
+                document.getElementById("box4").style.border = "1px solid red";
+                document.getElementById("box4").innerHTML = answer ;
+                document.getElementById("menu4").style.display = "none";
+                document.getElementById("bigmenu4").style.marginTop = "265px";
+
+                setTimeout(function res(){
+                document.getElementById("box4").style.border = "1px solid black";
+                document.getElementById("box4").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A4wrong3() {
+                var answer = document.getElementById("A4wrong3").innerHTML;
+                wrongsong.play();
+                document.getElementById("box4").style.border = "1px solid red";
+                document.getElementById("box4").innerHTML = answer ;
+                document.getElementById("menu4").style.display = "none";
+                document.getElementById("bigmenu4").style.marginTop = "265px";
+
+                setTimeout(function res(){
+                document.getElementById("box4").style.border = "1px solid black";
+                document.getElementById("box4").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A4right4() {
+                answer4 = document.getElementById("A4right4").innerHTML;
+                rightsong.play();
+                document.getElementById("box4").style.border = "1px solid rgb(63, 190, 95)";
+                document.getElementById("box4").innerHTML = answer4 ;
+                document.getElementById("menu4").style.display = "none";
+                document.getElementById("bigmenu4").style.marginTop = "265px";
+                document.getElementById("showresult4").style.opacity = "0.7";
+                document.getElementById("showresult4").style.pointerEvents = "none";
+
+            }
+            function A4wrong5() {
+                var answer = document.getElementById("A4wrong5").innerHTML;
+                wrongsong.play();
+                document.getElementById("box4").style.border = "1px solid red";
+                document.getElementById("box4").innerHTML = answer ;
+                document.getElementById("menu4").style.display = "none";
+                document.getElementById("bigmenu4").style.marginTop = "265px";
+
+                setTimeout(function res(){
+                document.getElementById("box4").style.border = "1px solid black";
+                document.getElementById("box4").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+
+            // Question5
+            function A5right1() {
+                answer5 = document.getElementById("A5right1").innerHTML;
+                rightsong.play();
+                document.getElementById("box5").style.border = "1px solid rgb(63, 190, 95)";
+                document.getElementById("box5").innerHTML = answer5 ;
+                document.getElementById("menu5").style.display = "none";
+                document.getElementById("bigmenu5").style.marginTop = "270px";
+                document.getElementById("showresult5").style.opacity = "0.7";
+                document.getElementById("showresult5").style.pointerEvents = "none";
+            }
+            function A5wrong2() {
+                var answer = document.getElementById("A5wrong2").innerHTML;
+                wrongsong.play();
+                document.getElementById("box5").style.border = "1px solid red";
+                document.getElementById("box5").innerHTML = answer ;
+                document.getElementById("menu5").style.display = "none";
+                document.getElementById("bigmenu5").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box5").style.border = "1px solid black";
+                document.getElementById("box5").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A5wrong3() {
+                var answer = document.getElementById("A5wrong3").innerHTML;
+                wrongsong.play();
+                document.getElementById("box5").style.border = "1px solid red";
+                document.getElementById("box5").innerHTML = answer ;
+                document.getElementById("menu5").style.display = "none";
+                document.getElementById("bigmenu5").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box5").style.border = "1px solid black";
+                document.getElementById("box5").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A5wrong4() {
+                var answer = document.getElementById("A5wrong4").innerHTML;
+                wrongsong.play();
+                document.getElementById("box5").style.border = "1px solid red";
+                document.getElementById("box5").innerHTML = answer ;
+                document.getElementById("menu5").style.display = "none";
+                document.getElementById("bigmenu5").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box5").style.border = "1px solid black";
+                document.getElementById("box5").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            function A5wrong5() {
+                var answer = document.getElementById("A5wrong5").innerHTML;
+                wrongsong.play();
+                document.getElementById("box5").style.border = "1px solid red";
+                document.getElementById("box5").innerHTML = answer ;
+                document.getElementById("menu5").style.display = "none";
+                document.getElementById("bigmenu5").style.marginTop = "270px";
+
+                setTimeout(function res(){
+                document.getElementById("box5").style.border = "1px solid black";
+                document.getElementById("box5").innerHTML = "" ;
+                },1000)
+                res();
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+
+            // Open Menu Function
+            var count1 = 0;
+            function openmenu1() {
+                if(count1==0){
+                    document.getElementById("menu1").style.display = "block";
+                    document.getElementById("bigmenu1").style.marginTop = "70px";
+                    document.getElementById("menu2").style.display = "none";
+                    document.getElementById("bigmenu2").style.marginTop = "270px";
+                    document.getElementById("menu3").style.display = "none";
+                    document.getElementById("bigmenu3").style.marginTop = "270px";
+                    document.getElementById("menu4").style.display = "none";
+                    document.getElementById("bigmenu4").style.marginTop = "265px";
+                    document.getElementById("menu5").style.display = "none";
+                    document.getElementById("bigmenu5").style.marginTop = "270px";
+                    count1 = 1;
+                    count2 = 0;
+                    count3 = 0;
+                    count4 = 0;
+                    count5 = 0;
+                }
+                else {
+                    document.getElementById("menu1").style.display = "none";
+                    document.getElementById("bigmenu1").style.marginTop = "270px";
+                    count1 = 0;
+                }
+            }
+
+            var count2 = 0;
+            function openmenu2() {
+                if(count2==0){
+                    document.getElementById("menu2").style.display = "block";
+                    document.getElementById("bigmenu2").style.marginTop = "70px";
+                    document.getElementById("menu1").style.display = "none";
+                    document.getElementById("bigmenu1").style.marginTop = "270px";
+                    document.getElementById("menu3").style.display = "none";
+                    document.getElementById("bigmenu3").style.marginTop = "270px";
+                    document.getElementById("menu4").style.display = "none";
+                    document.getElementById("bigmenu4").style.marginTop = "265px";
+                    document.getElementById("menu5").style.display = "none";
+                    document.getElementById("bigmenu5").style.marginTop = "270px";
+                    count2 = 1;
+                    count1 = 0;
+                    count3 = 0;
+                    count4 = 0;
+                    count5 = 0;
+                }
+                else {
+                    document.getElementById("menu2").style.display = "none";
+                    document.getElementById("bigmenu2").style.marginTop = "270px";
+                    count2 = 0;
+                }
+            }
+
+            var count3 = 0;
+            function openmenu3() {
+                if(count3==0){
+                    document.getElementById("menu3").style.display = "block";
+                    document.getElementById("bigmenu3").style.marginTop = "70px";
+                    document.getElementById("menu1").style.display = "none";
+                    document.getElementById("bigmenu1").style.marginTop = "270px";
+                    document.getElementById("menu2").style.display = "none";
+                    document.getElementById("bigmenu2").style.marginTop = "270px";
+                    document.getElementById("menu4").style.display = "none";
+                    document.getElementById("bigmenu4").style.marginTop = "265px";
+                    document.getElementById("menu5").style.display = "none";
+                    document.getElementById("bigmenu5").style.marginTop = "270px";
+                    count3 = 1;
+                    count1 = 0;
+                    count2 = 0;
+                    count4 = 0;
+                    count5 = 0;
+                }
+                else {
+                    document.getElementById("menu3").style.display = "none";
+                    document.getElementById("bigmenu3").style.marginTop = "270px";
+                    count3 = 0;
+                }
+            }
+
+            var count4 = 0;
+            function openmenu4() {
+                if(count4==0){
+                    document.getElementById("menu4").style.display = "block";
+                    document.getElementById("bigmenu4").style.marginTop = "65px";
+                    document.getElementById("menu1").style.display = "none";
+                    document.getElementById("bigmenu1").style.marginTop = "270px";
+                    document.getElementById("menu2").style.display = "none";
+                    document.getElementById("bigmenu2").style.marginTop = "270px";
+                    document.getElementById("menu3").style.display = "none";
+                    document.getElementById("bigmenu3").style.marginTop = "270px";
+                    document.getElementById("menu5").style.display = "none";
+                    document.getElementById("bigmenu5").style.marginTop = "270px";
+                    count4 = 1;
+                    count1 = 0;
+                    count2 = 0;
+                    count3 = 0;
+                    count5 = 0;
+                }
+                else {
+                    document.getElementById("menu4").style.display = "none";
+                    document.getElementById("bigmenu4").style.marginTop = "265px";
+                    count4 = 0;
+                }
+            }
+
+            var count5 = 0;
+            function openmenu5() {
+                if(count5==0){
+                    document.getElementById("menu5").style.display = "block";
+                    document.getElementById("bigmenu5").style.marginTop = "70px";
+                    document.getElementById("menu1").style.display = "none";
+                    document.getElementById("bigmenu1").style.marginTop = "270px";
+                    document.getElementById("menu2").style.display = "none";
+                    document.getElementById("bigmenu2").style.marginTop = "270px";
+                    document.getElementById("menu3").style.display = "none";
+                    document.getElementById("bigmenu3").style.marginTop = "270px";
+                    document.getElementById("menu4").style.display = "none";
+                    document.getElementById("bigmenu4").style.marginTop = "265px";
+                    count5 = 1;
+                    count1 = 0;
+                    count2 = 0;
+                    count3 = 0;
+                    count4 = 0;
+                }
+                else {
+                    document.getElementById("menu5").style.display = "none";
+                    document.getElementById("bigmenu5").style.marginTop = "270px";
+                    count5 = 0;
+                }
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+
+            // audio
+            var x = document.getElementById("myaudio");
+            var s = document.getElementById("seek");
+            var img = document.getElementById("1");
+            var imgpause = document.getElementById("2");
+            var i = 0;
+
+            function playaudio() {
+                if(i==0){
+                    x.play();
+                    img.style.display = "none";
+                    imgpause.style.display = "block";
+                    i=1;
+                }
+                else {
+                    x.pause();
+                    img.style.display = "block";
+                    imgpause.style.display = "none";
+                    i=0;
+                }
+            }
+
+            x.addEventListener('timeupdate', function(e){
+                s.value = x.currentTime/x.duration*100;
+                curr.innerHTML= x.currentTime;
+            })
+
+            s.addEventListener('change', function(){
+                x.currentTime = s.value/100*x.duration;
+                duart.innerHTML=x.duration;
+            })
+            ////////////////////////////////////////////////////////////////////////////////
+
+            // Show Result Function
+            function showresult() {
+                document.getElementById("showres").style.opacity = "0.7";
+                document.getElementById("showres").style.pointerEvents = "none";
+                document.getElementById("showres").style.userSelect = "none";
+                document.getElementById("unselect").style.pointerEvents = "none";
+                document.getElementById("unselect").style.userSelect = "none";
+                document.getElementById("box1").style.border = "1px solid rgb(63, 190, 95)";
+                document.getElementById("box2").style.border = "1px solid rgb(63, 190, 95)";
+                document.getElementById("box3").style.border = "1px solid rgb(63, 190, 95)";
+                document.getElementById("box4").style.border = "1px solid rgb(63, 190, 95)";
+                document.getElementById("box5").style.border = "1px solid rgb(63, 190, 95)";
+                document.getElementById("showresult1").style.opacity = "0.7";
+                document.getElementById("showresult2").style.opacity = "0.7";
+                document.getElementById("showresult3").style.opacity = "0.7";
+                document.getElementById("showresult4").style.opacity = "0.7";
+                document.getElementById("showresult5").style.opacity = "0.7";
+                document.getElementById("menu1").style.display = "none";
+                document.getElementById("bigmenu1").style.marginTop = "270px";
+                document.getElementById("menu2").style.display = "none";
+                document.getElementById("bigmenu2").style.marginTop = "270px";
+                document.getElementById("menu3").style.display = "none";
+                document.getElementById("bigmenu3").style.marginTop = "270px";
+                document.getElementById("menu4").style.display = "none";
+                document.getElementById("bigmenu4").style.marginTop = "265px";
+                document.getElementById("menu5").style.display = "none";
+                document.getElementById("bigmenu5").style.marginTop = "270px";
+                count1 = 0;
+                count2 = 0;
+                count3 = 0;
+                count4 = 0;
+                count5 = 0;
+
+                document.getElementById("box1").innerHTML = "2";
+                document.getElementById("box2").innerHTML = "3";
+                document.getElementById("box3").innerHTML = "5";
+                document.getElementById("box4").innerHTML = "4";
+                document.getElementById("box5").innerHTML = "1";
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+
+            // Reset Answers Function
+            function reset() {
+                document.getElementById("showres").style.opacity = "1";
+                document.getElementById("showres").style.pointerEvents = "auto";
+                document.getElementById("showres").style.userSelect = "auto";
+                document.getElementById("unselect").style.pointerEvents = "auto";
+                document.getElementById("unselect").style.userSelect = "auto";
+                document.getElementById("box1").style.border = "1px solid black";
+                document.getElementById("box2").style.border = "1px solid black";
+                document.getElementById("box3").style.border = "1px solid black";
+                document.getElementById("box4").style.border = "1px solid black";
+                document.getElementById("box5").style.border = "1px solid black";
+
+                document.getElementById("showresult1").style.opacity = "1";
+                document.getElementById("showresult1").style.pointerEvents = "auto";
+                document.getElementById("showresult1").style.userSelect = "auto";
+
+                document.getElementById("showresult2").style.opacity = "1";
+                document.getElementById("showresult2").style.pointerEvents = "auto";
+                document.getElementById("showresult2").style.userSelect = "auto";
+
+                document.getElementById("showresult3").style.opacity = "1";
+                document.getElementById("showresult3").style.pointerEvents = "auto";
+                document.getElementById("showresult3").style.userSelect = "auto";
+
+                document.getElementById("showresult4").style.opacity = "1";
+                document.getElementById("showresult4").style.pointerEvents = "auto";
+                document.getElementById("showresult4").style.userSelect = "auto";
+
+                document.getElementById("showresult5").style.opacity = "1";
+                document.getElementById("showresult5").style.pointerEvents = "auto";
+                document.getElementById("showresult5").style.userSelect = "auto";
+
+                document.getElementById("menu1").style.display = "none";
+                document.getElementById("bigmenu1").style.marginTop = "270px";
+                document.getElementById("menu2").style.display = "none";
+                document.getElementById("bigmenu2").style.marginTop = "270px";
+                document.getElementById("menu3").style.display = "none";
+                document.getElementById("bigmenu3").style.marginTop = "270px";
+                document.getElementById("menu4").style.display = "none";
+                document.getElementById("bigmenu4").style.marginTop = "265px";
+                document.getElementById("menu5").style.display = "none";
+                document.getElementById("bigmenu5").style.marginTop = "270px";
+                count1 = 0;
+                count2 = 0;
+                count3 = 0;
+                count4 = 0;
+                count5 = 0;
+
+                document.getElementById("box1").innerHTML = "";
+                document.getElementById("box2").innerHTML = "";
+                document.getElementById("box3").innerHTML = "";
+                document.getElementById("box4").innerHTML = "";
+                document.getElementById("box5").innerHTML = "";
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+
+            // Play Image Song Functions 
+            var mysong1 = new Audio();
+            var mysong2 = new Audio();
+            var mysong3 = new Audio();
+            var mysong4 = new Audio();
+            var mysong5 = new Audio();
+
+            mysong1.src = './assets/p21e4q1_1.mp3';
+            mysong2.src = './assets/p21e4q1_2.mp3';
+            mysong3.src = './assets/p21e4q1_3.mp3';
+            mysong4.src = './assets/p21e4q1_4.mp3';
+            mysong5.src = './assets/p21e4q1_5.mp3';
+
+            const playsong1 = () =>{
+                mysong2.pause();
+                mysong3.pause();
+                mysong4.pause();
+                mysong5.pause();
+                mysong1.play();
+            }
+            const playsong2 = () =>{
+                mysong1.pause();
+                mysong3.pause();
+                mysong4.pause();
+                mysong5.pause();
+                mysong2.play();
+            }
+            const playsong3 = () =>{
+                mysong1.pause();
+                mysong2.pause();
+                mysong4.pause();
+                mysong5.pause();
+                mysong3.play();
+            }
+            const playsong4 = () =>{
+                mysong1.pause();
+                mysong2.pause();
+                mysong3.pause();
+                mysong5.pause();
+                mysong4.play();
+            }
+            const playsong5 = () =>{
+                mysong1.pause();
+                mysong2.pause();
+                mysong3.pause();
+                mysong4.pause();
+                mysong5.play();
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+        </script>
+    </body>
+</html>
